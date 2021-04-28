@@ -9,7 +9,7 @@ namespace pandemic
     class Board
     {
         static std::map<City, int> sickCube;
-        std::map<City, std::set<City>> neighborsCity;
+        static std::map<City, std::set<City>> neighborsCity;
         static std::map<City, bool> researchStation;
         static std::map<City, Color> colors;
         static std::map<City, bool> isDiscoverCure;
