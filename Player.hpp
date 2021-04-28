@@ -9,7 +9,7 @@ namespace pandemic
 {
     class Player
     {
-
+    protected:
         Board board;
         City currCity;
         std::set<City> cards;
