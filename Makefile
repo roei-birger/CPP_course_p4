@@ -36,3 +36,5 @@ valgrind: demo1 demo2 test
 
 clean:
 	rm -f *.o demo1 demo2 test
+
+.vscode
