@@ -19,6 +19,7 @@ namespace pandemic
         bool is_clean();
         const int operator[](City) const;
         int &operator[](City);
+         void remove_cures();
 
         friend std::ostream &operator<<(std::ostream &os, const Board &b);
     };
