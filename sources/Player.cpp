@@ -43,7 +43,7 @@ namespace pandemic
 
     Player &Player::fly_shuttle(City c)
     {
-        if (currCity == c || currBoard.getResearchStation(c) == 0 || currBoard.getResearchStation(currCity))
+        if (currCity == c || !currBoard.getResearchStation(c) || !currBoard.getResearchStation(currCity))
         {
             throw invalid_argument("Cannot travel to inserted city");
         }
@@ -84,6 +84,7 @@ namespace pandemic
 
         if (currBoard.getResearchStation(currCity) && count >= fiveCards && !currBoard.getIsDiscoverCure(Board::colors.at(currCity)))
         {
+            currBoard.setIsDiscoverCure(c);
             count = fiveCards;
             auto it = cards.begin();
             while (it != cards.end() && count > 0)
@@ -111,7 +112,7 @@ namespace pandemic
         }
         if (currBoard.getIsDiscoverCure(Board::colors.at(currCity)))
         {
-            currBoard[c]=0;
+            currBoard[c] = 0;
         }
         else
         {

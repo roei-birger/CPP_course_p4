@@ -2,6 +2,8 @@
 
 using namespace std;
 
+const int fiveCards = 5;
+
 namespace pandemic
 {
 
@@ -10,6 +12,25 @@ namespace pandemic
     {
         return "GeneSplicer";
     }
-    GeneSplicer &GeneSplicer::discover_cure(Color c) { return *this; }
+    GeneSplicer &GeneSplicer::discover_cure(Color c) { 
+        int count = cards.size();
+                if (count < fiveCards || !currBoard.getResearchStation(currCity))
+        {
+            throw invalid_argument("Cannot discover_cure in inserted city");
+        }
 
-};
+        if (currBoard.getResearchStation(currCity) && count >= fiveCards && !currBoard.getIsDiscoverCure(Board::colors.at(currCity)))
+        {
+            count = fiveCards;
+            currBoard.setIsDiscoverCure(c);
+            auto it = cards.begin();
+            while (it != cards.end() && count > 0)
+            { 
+                    cards.erase(it++);
+                    count--;
+
+            }
+        }
+        return *this; }
+
+};    

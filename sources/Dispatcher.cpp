@@ -11,7 +11,14 @@ namespace pandemic
         return "Dispatcher";
     }
 
-    Dispatcher &Dispatcher::fly_direct(City c) { return *this; }
-
+    Dispatcher &Dispatcher::fly_direct(City c)
+    {
+        if (currCity == c || !currBoard.getResearchStation(currCity))
+        {
+            throw invalid_argument("Cannot travel to inserted city");
+        }
+        currCity = c;
+        return *this;
+    }
 
 };

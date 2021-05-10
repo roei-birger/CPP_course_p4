@@ -11,6 +11,11 @@ namespace pandemic
         return "OperationsExpert";
     }
 
-    OperationsExpert &OperationsExpert::build() { return *this; }
+    OperationsExpert &OperationsExpert::build()
+    {
+        currBoard.setResearchStation(currCity);
+
+        return *this;
+    }
 
 };

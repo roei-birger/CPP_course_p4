@@ -18,7 +18,7 @@ namespace pandemic
 
         Board();
         bool is_clean();
-        const int operator[](City) const;
+        int operator[](City) const;
         int &operator[](City);
         void remove_cures();
         void remove_stations();
