@@ -10,7 +10,7 @@ namespace pandemic
     {
         std::map<City, int> sickCube;
         std::map<City, bool> researchStation;
-        std::map<City, bool> isDiscoverCure;
+        std::map<Color, bool> isDiscoverCure;
 
     public:
         static std::map<City, std::set<City>> neighborsCity;
@@ -22,6 +22,10 @@ namespace pandemic
         int &operator[](City);
         void remove_cures();
         void remove_stations();
+        bool getIsDiscoverCure(Color);
+        void setIsDiscoverCure(Color);
+        bool getResearchStation(City);
+        void setResearchStation(City);
 
         friend std::ostream &operator<<(std::ostream &os, const Board &b);
     };

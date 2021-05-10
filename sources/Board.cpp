@@ -36,7 +36,7 @@ namespace pandemic
     {
         for (auto const &i : sickCube)
         {
-            if (isDiscoverCure.at(i.first) != 0)
+            if (i.second != 0)
             {
                 return false;
             }
@@ -46,17 +46,34 @@ namespace pandemic
 
     void Board::remove_cures()
     {
-        for (auto const &i : isDiscoverCure)
+        for (auto &i : isDiscoverCure)
         {
-            isDiscoverCure.at(i.first) = false;
+            i.second = false;
         }
     }
 
     void Board::remove_stations()
     {
-        for (auto const &i : researchStation)
+        for (auto &i : researchStation)
         {
-            researchStation.at(i.first) = false;
+            i.second = false;
         }
+    }
+
+    bool Board::getIsDiscoverCure(Color c)
+    {
+        return isDiscoverCure.at(c);
+    }
+    void Board::setIsDiscoverCure(Color c)
+    {
+        isDiscoverCure.at(c) = true;
+    }
+    bool Board::getResearchStation(City c)
+    {
+        return researchStation.at(c);
+    }
+    void Board::setResearchStation(City c)
+    {
+        researchStation.at(c) = true;
     }
 };
