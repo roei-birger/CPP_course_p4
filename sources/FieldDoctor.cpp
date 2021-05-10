@@ -12,6 +12,12 @@ namespace pandemic
     }
     FieldDoctor &FieldDoctor::treat(City c)
     {
+        if (c == currCity)
+        {
+            Player::treat(c);
+            return *this;
+        }
+        
         if (currBoard[c] == 0 || Board::neighborsCity.at(currCity).count(c) == 0)
         {
             throw invalid_argument("Cannot treat inserted city");

@@ -13,7 +13,12 @@ namespace pandemic
 
     Dispatcher &Dispatcher::fly_direct(City c)
     {
-        if (currCity == c || !currBoard.getResearchStation(currCity))
+        if (!currBoard.getResearchStation(currCity))
+        {
+            Player::fly_direct(c);
+            return *this;
+        }
+        if (currCity == c)
         {
             throw invalid_argument("Cannot travel to inserted city");
         }

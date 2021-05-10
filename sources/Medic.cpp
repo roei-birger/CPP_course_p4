@@ -22,14 +22,9 @@ namespace pandemic
         {
             throw invalid_argument("Cannot treat inserted city");
         }
-        if (currBoard.getIsDiscoverCure(Board::colors.at(currCity)))
-        {
-            currBoard[c] = 0;
-        }
-        else
-        {
-            currBoard[c] = 0;
-        }
+
+        currBoard[c] = 0;
+
         return *this;
     }
 

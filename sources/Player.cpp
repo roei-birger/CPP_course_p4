@@ -57,7 +57,7 @@ namespace pandemic
         {
             throw invalid_argument("Cannot build in inserted city");
         }
-        if (currBoard.getResearchStation(currCity) == 0)
+        if (!currBoard.getResearchStation(currCity))
         {
             currBoard.setResearchStation(currCity);
             cards.erase(currCity);
