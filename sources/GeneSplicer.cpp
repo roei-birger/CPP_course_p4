@@ -5,7 +5,7 @@ using namespace std;
 namespace pandemic
 {
 
-    GeneSplicer::GeneSplicer(Board b, City c) : Player(b, c) {}
+    GeneSplicer::GeneSplicer(Board &b, City c) : Player(b, c) {}
     string GeneSplicer::role()
     {
         return "GeneSplicer";

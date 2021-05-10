@@ -5,7 +5,7 @@ using namespace std;
 namespace pandemic
 {
 
-    Researcher::Researcher(Board b, City c) : Player(b, c) {}
+    Researcher::Researcher(Board &b, City c) : Player(b, c) {}
     string Researcher::role()
     {
         return "Researcher";

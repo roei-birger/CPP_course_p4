@@ -5,7 +5,7 @@ using namespace std;
 namespace pandemic
 {
 
-    Dispatcher::Dispatcher(Board b, City c) : Player(b, c) {}
+    Dispatcher::Dispatcher(Board &b, City c) : Player(b, c) {}
     string Dispatcher::role()
     {
         return "Dispatcher";
