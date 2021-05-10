@@ -15,6 +15,8 @@ namespace pandemic
     public:
         static std::map<City, std::set<City>> neighborsCity;
         static std::map<City, Color> colors;
+        static std::map<City, std::string> getCity;
+        static std::map<Color, std::string> getColor;
 
         Board();
         bool is_clean();
